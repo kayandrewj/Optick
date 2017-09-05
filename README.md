@@ -18,7 +18,7 @@ For paragraph "greeting", append "Hello World!":
 Optick methods return a collection of DOM nodes, organized into an array:
 
   `_4("p").find(".body-text") //=>
-    [DOMNodeCollection { nodes: [<p class="body-text">Lorem Ipsum<p>]}]`
+    DOMNodeCollection { nodes: [<p class="body-text">Lorem Ipsum<p>]}`
 
 ## Find Methods
 
