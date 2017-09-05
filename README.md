@@ -8,17 +8,16 @@ Optick is a lightweight DOM querying and manipulation library. It is designed to
 
 Making Optick semantic and easy to use firstly depends on user-created, meaningful DOM element class names. Selectors in Optick are identical to selectors in CSS, allowing novice developers who have written some CSS to adapt easily. If good naming conventions are used, Optick has the ability to read like spoken English:
 
-  `\_4("button").addClass("submit")`
+For button, add class "submit":
+  `_4("button").addClass("submit")`
 
-  For button, add class "submit"
+For paragraph "greeting", append "Hello World!":
+  `_4("p.greeting").append("Hello World!")`
 
-  `\_4("p.greeting").append("Hello World!")`
-
-  For paragraph "greeting", append "Hello World!"
 
 Optick methods return a collection of DOM nodes, organized into an array:
 
-  `\_4("p").find(".body-text") //=>
+  `_4("p").find(".body-text") //=>
     [DOMNodeCollection { nodes: [<p class="body-text">Lorem Ipsum<p>]}]`
 
 ## Find Methods
