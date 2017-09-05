@@ -4,9 +4,7 @@ Optick is a lightweight DOM querying and manipulation library. It is designed to
 
 ## Major Features
 
-### Semantics
-
-**Easy DOM Element Selection**
+## Easy DOM Element Selection
 
 Making Optick semantic and easy to use firstly depends on user-created, meaningful DOM element class names. Selectors in Optick are identical to selectors in CSS, allowing novice developers who have written some CSS to adapt easily. If good naming conventions are used, Optick has the ability to read like spoken English:
 
@@ -23,18 +21,18 @@ Optick methods return a collection of DOM nodes, organized into an array:
   `\_4("p").find(".body-text") //=>
     [DOMNodeCollection { nodes: [<p class="body-text">Lorem Ipsum<p>]}]`
 
-**Find Methods**
+## Find Methods
 
 * find
 * children
 * parent
 
-**innerHTML Content Manipulation**
+## innerHTML Content Manipulation
 
 * append
 * empty
 
-**outerHTML Content Manipulation**
+## outerHTML Content Manipulation
 
 * attr
 * addClass
@@ -42,7 +40,7 @@ Optick methods return a collection of DOM nodes, organized into an array:
 * toggleClass
 * remove
 
-**Event Handling**
+## Event Handling
 
 Event handling in Optick behaves predictably and can be written semantically. The event methods are capable of handling any type of DOM event, and can execute a callback in any form.
 
@@ -50,6 +48,6 @@ Event handling in Optick behaves predictably and can be written semantically. Th
 * off
 * Ajax
 
-**Ajax**
+## Ajax
 
 Optick contains an Ajax method similar in syntax to jQuery. Ajax calls return a single promise that is undefined by default. Users may opt to string on other Ajax calls, but may not string on more than one other type of method as a promise.
