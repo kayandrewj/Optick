@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #212121;
+}
+
+.guide img {
+  opacity: 0.5;
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+}
+
+.guide {
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 300;
+  color: #EEEEEE;
+  position: absolute;
+  bottom: 0;
+  background-color: #212121;
+  padding: 30px;
+  border-top: 1px solid rgba(230, 230, 230, 0.2);
+  width: 100vw;
+}
+
+.row {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.row li {
+  background-color: transparent;
+  width: 72px;
+  height: 72px;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  padding-left: 30px;
+  padding-top: 24px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 4px;
+  color: rgba(220, 220, 220, 0.934);
+  box-shadow: 0px 0px 9px 0px rgba(220, 220, 220, 0.2);
+
+}
+
+.row-mid {
+  margin-left: -38px;
+}
+
+.row-bottom {
+  margin-left: -120px;
+}
+
+.input {
+  display: flex;
+  color: rgba(220, 220, 220, 0.934);
+  flex-wrap: wrap;
+  padding: 38px;
+}
+
+.word {
+  list-style: none;
+  font-family: "Assistant", sans-serif;
+  display: flex;
+  font-size: 33px;
+  font-weight: 400;
+  padding: 4px;
+  margin: 0px;
+}
