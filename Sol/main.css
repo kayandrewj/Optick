@@ -27,7 +27,7 @@ body {
   color: #EEEEEE;
   position: absolute;
   bottom: 0;
-  background-color: #212121;
+  background-color: transparent;
   padding: 30px;
   border-top: 1px solid rgba(230, 230, 230, 0.2);
   width: 100vw;
@@ -52,8 +52,26 @@ body {
   margin: 4px;
   color: rgba(220, 220, 220, 0.934);
   box-shadow: 0px 0px 9px 0px rgba(220, 220, 220, 0.2);
+  transition: ease 500ms;
 
 }
+
+.heatmap {
+  margin-left: -13px;
+}
+
+.heatmap li {
+  background-color: #212121;
+  width: 1px;
+  height: 1px;
+  margin: 39.5px;
+  margin-left: 52px;
+  margin-right: 27px;
+  border: none;
+  border-radius: 43px;
+  box-shadow: 0px 0px 93px 58px #212121;
+  padding: 0px;
+  }
 
 .row-mid {
   margin-left: -38px;
@@ -78,4 +96,15 @@ body {
   font-weight: 400;
   padding: 4px;
   margin: 0px;
+}
+
+.word li {
+  transition: ease .5ms;
+}
+
+.lead {
+  font-size: 68px;
+  opacity: 0.6;
+  font-weight: 100;
+  margin-top: -41px;
 }
