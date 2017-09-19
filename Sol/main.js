@@ -5,16 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let letter = e.key;
     let virtualKey = `.${e.key}`;
 
-    if (index[keyCode] === undefined) {
-      index[keyCode] = 0;
-    } else {
-      if (index[keyCode] < 53) {
-        index[keyCode] += 1;
-      }
-    }
-
     if (e.code === "Space") {
-      _4(".input").append("<ul class='word'></ul>");
+      addSpace();
     } else if (e.code === "Enter") {
       _4(".input").append("");
     } else {
@@ -34,12 +26,37 @@ document.addEventListener("DOMContentLoaded", () => {
       lastChild.remove();
     }
   });
-
-
 });
 
 
+const demoPattern = (str) => {
+  let arr = str.split("");
+  arr.forEach(char => {
+    window.setTimeout(() => {
+      if (char !== " ") {
+        addChar(char.toLowerCase(), char);
+      } else {
+        addSpace();
+      }
+    }, 500);
+  });
+
+
+};
+
+const addSpace = () => {
+  _4(".input").append("<ul class='word'></ul>");
+};
+
 const addChar = (keyCode, letter) => {
+  if (index[keyCode] === undefined) {
+    index[keyCode] = 0;
+  } else {
+    if (index[keyCode] < 53) {
+      index[keyCode] += 1;
+    }
+  }
+
   let newChar = document.createElement("li");
   newChar.append(letter);
   newChar.style.color = parseRGBAtoHex(spectrum[index[keyCode]]);
