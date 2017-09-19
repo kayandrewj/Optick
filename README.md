@@ -20,33 +20,76 @@ Optick methods return a collection of DOM nodes, organized into an array:
   `_4("p").find(".body-text") //=>
     DOMNodeCollection { nodes: [<p class="body-text">Lorem Ipsum<p>]}`
 
-## Find Methods
+## Methods
 
-* find
-* children
-* parent
+## *Find*
 
-## innerHTML Content Manipulation
+### find
+`_4.(".selector").find`
 
-* append
-* empty
+Returns an array of DOM elements that match the given query.
 
-## outerHTML Content Manipulation
+### children
+`_4.(".selector").children`
 
-* attr
-* addClass
-* removeClass
-* toggleClass
-* remove
+Returns an array of DOM elements that are children of the first match found for the given selector.
+
+### parent
+`_4.(".selector").parent`
+
+Returns a single DOM element that is a parent of the first match found for the given selector.
+
+## *innerHTML*
+
+### append
+`_4(".selector").append("content")`
+
+If given a string, will concat the string with the existing inner HTML content at all matches found for the given selector.
+
+If given a string that can be parsed as an HTML element (such as an `<li>` being appended to a `<ul>`) will nest an HTML element as a child of all matches found for the given selector
+
+### empty
+`_4(".selector").empty`
+
+Removes any inner HTML content it finds in the found elements for the given selector.
+
+
+## *outerHTML*
+
+### attr
+`_4(".selector").attr("attribute", "property")`
+
+Takes two arguments, an attribute (e.g., class, style, id) and a property. Assigns the property to the attribute.
+
+### addClass
+`_4(".selector").addClass("className")`
+
+Works similarly to `.attr` but will only assign a class. Will not assign duplicate classes.
+
+### removeClass
+`_4(".selector").removeClass("className")`
+
+The inverse of addClass.
+
+### toggleClass
+`_4(".selector").toggleClass("className")`
+
+If className is active, removes className from class list; if className does not exist, adds className to class list.
+
 
 ## Event Handling
 
 Event handling in Optick behaves predictably and can be written semantically. The event methods are capable of handling any type of DOM event, and can execute a callback in any form.
 
-* on
-* off
-* Ajax
+### on
+`(".selector").on("click", callback)`
 
-## Ajax
+Takes two arguments: a DOM action and a callback function to execute when the action is fired.
 
+### off
+`(".selector").off("click", callback)`
+
+Takes two arguments: a DOM action and a callback function to execute when the action started but is no longer being fired.
+
+### Ajax
 Optick contains an Ajax method similar in syntax to jQuery. Ajax calls return a single promise that is undefined by default. Users may opt to string on other Ajax calls, but may not string on more than one other type of method as a promise.
