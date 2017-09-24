@@ -1,5 +1,7 @@
 # Optick
 
+[Sol](https://kayandrewj.github.io/Optick/Sol/index.html) (live demo powered by Optick)
+
 Optick is a lightweight DOM querying and manipulation library. It is designed to abstract away the process of vanilla JavaScript DOM manipulation. The purpose of Optick is to eliminate boilerplate and stay within reach of developers who are just beginning to venture into DOM manipulation.
 
 ## Major Features
