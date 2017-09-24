@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 const demoPattern = (str) => {
   let arr = str.split("");
   arr.forEach(char => {
@@ -40,8 +39,6 @@ const demoPattern = (str) => {
       }
     }, 500);
   });
-
-
 };
 
 const addSpace = () => {
