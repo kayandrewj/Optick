@@ -24,6 +24,7 @@ body {
   padding: 30px;
   border-top: 1px solid rgba(230, 230, 230, 0.2);
   width: 100vw;
+  padding-top: 67px;
 }
 
 .row {
@@ -77,10 +78,11 @@ body {
   display: flex;
   color: rgba(220, 220, 220, 0.934);
   flex-wrap: wrap;
-  max-height: 90vh;
+  max-height: 56vh;
   padding: 38px;
   overflow: scroll;
-  margin-top: 37px;
+  margin-top: 31px;
+  margin-left: 40px;
 }
 
 .input::-webkit-scrollbar {
@@ -102,8 +104,68 @@ body {
 }
 
 .lead {
+  font-family: "Assistant", sans-serif;
   font-size: 68px;
-  opacity: 0.6;
   font-weight: 100;
-  margin-top: -41px;
+  color: rgba(220, 220, 220, 0.6);
+  position: absolute;
+  top: 31px;
+  left: 37px;
+}
+
+.paste-box {
+  position: absolute;
+  top: 23px;
+  display: flex;
+  align-items: center;
+}
+
+.paste-input {
+  outline: none;
+  background: transparent;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  box-shadow: 0px 0px 9px 0px rgba(220, 220, 220, 0.2);
+  font-family: 'Source Code Pro', monospace;
+  width: 713px;
+  font-weight: 500;
+  font-size: 16px;
+  padding-left: 9px;
+  color: rgba(220, 220, 220, 0.4);
+  margin-right: -1px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: 300;
+}
+
+button {
+  font-family: 'Assistant', sans-serif;
+  outline: none;
+  background: transparent;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  height: 39px;
+  width: 55px;
+  border-radius: 6px;
+  color: rgba(220, 220, 220, 0.934);
+  box-shadow: 0px 0px 9px 0px rgba(220, 220, 220, 0.2);
+  font-weight: 300;
+  cursor: pointer;
+  transition: ease 200ms;
+  margin-right: 7px;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 9px 0px rgba(220, 220, 220, 0.6);
+  padding: 0px
+}
+
+.start-input {
+  margin-right: 8px;
+  margin-bottom: -2px;
+}
+
+.reset-button {
+
 }
