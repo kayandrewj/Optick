@@ -24,8 +24,28 @@ document.addEventListener("DOMContentLoaded", () => {
       let children = _4(".input").children();
       let lastChild = children.nodes[children.nodes.length - 1];
       lastChild.remove();
+      if (children.nodes.length === 1) {
+        addSpace();
+      }
     }
   });
+
+  // _4(".paste-input").on("keypress", (e) => {
+  //   const clipKeys = {
+  //     undo: 122,
+  //     redo: 121,
+  //     mCut: 120,
+  //     mPaste: 118,
+  //     mCopy: 99,
+  //     select: 97,
+  //     wDelete: 46,
+  //     wInsert: 45,
+  //   };
+  //   let charCode = e.which;
+  //   if ()
+  //
+  // });
+
 });
 
 const demoPattern = (str) => {
