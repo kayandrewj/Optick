@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (e.code.charAt(0) === "K") {
-      _4(virtualKey).attr("style", `box-shadow: 0px 0px 93px 58px ${spectrum[index[keyCode]]};
-      background-color:${spectrum[index[keyCode]]}`);
+      addColor(keyCode, virtualKey);
     }
   });
 
@@ -44,21 +43,32 @@ document.addEventListener("DOMContentLoaded", () => {
       evt.returnValue = false;
       evt.preventDefault();
     }
+  });
 
+  _4(".paste-input-form").on("submit", (e) => {
+    e.preventDefault();
+    let text = e.target["0"].value;
+    constructFromInput(text);
   });
 
 });
 
-const demoPattern = (str) => {
-  let arr = str.split("");
+const constructFromInput = (input) => {
+  let arr = input.split("");
   arr.forEach(char => {
     window.setTimeout(() => {
       if (char !== " ") {
         addChar(char.toLowerCase(), char);
+        if ((/[a-z]/gi).test(char)) {
+          virtualKey = char.split();
+          virtualKey.unshift(".");
+          virtualKey = virtualKey.join("");
+          addColor(char.toLowerCase(), virtualKey);
+        }
       } else {
         addSpace();
       }
-    }, 500);
+    }, 200);
   });
 };
 
@@ -74,13 +84,17 @@ const addChar = (keyCode, letter) => {
       index[keyCode] += 1;
     }
   }
-
   let newChar = document.createElement("li");
   newChar.append(letter);
   newChar.style.color = parseRGBAtoHex(spectrum[index[keyCode]]);
   let children = _4(".input").children();
   let lastChild = children.nodes[children.nodes.length - 1];
   lastChild.append(newChar);
+};
+
+const addColor = (keyCode, virtualKey) => {
+  _4(virtualKey).attr("style", `box-shadow: 0px 0px 93px 58px ${spectrum[index[keyCode]]};
+  background-color:${spectrum[index[keyCode]]}`);
 };
 
 const parseRGBAtoHex = (rgba) => {
