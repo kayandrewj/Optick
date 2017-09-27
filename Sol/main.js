@@ -30,21 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // _4(".paste-input").on("keypress", (e) => {
-  //   const clipKeys = {
-  //     undo: 122,
-  //     redo: 121,
-  //     mCut: 120,
-  //     mPaste: 118,
-  //     mCopy: 99,
-  //     select: 97,
-  //     wDelete: 46,
-  //     wInsert: 45,
-  //   };
-  //   let charCode = e.which;
-  //   if ()
-  //
-  // });
+  _4(".paste-input").on("keypress", (e) => {
+    const clipKeys = [122, 121, 120, 118, 99, 97];
+    let charCode = e.which;
+    if (e.ctrlKey && clipKeys.indexof(charCode) > -1) {
+      return 0;
+    }
+    let evt = e || window.event;
+    let key = evt.keyCode || theEvent.which;
+    key = String.fromCharCode(key);
+    const regex = /[]|\./;
+    if (!regex.test(key)) {
+      evt.returnValue = false;
+      evt.preventDefault();
+    }
+
+  });
 
 });
 
