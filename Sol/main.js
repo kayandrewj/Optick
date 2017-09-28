@@ -20,12 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   _4("body").on("keydown", (e) => {
     if (e.code === "Backspace") {
-      let children = _4(".input").children();
-      let lastChild = children.nodes[children.nodes.length - 1];
-      lastChild.remove();
-      if (children.nodes.length === 1) {
-        addSpace();
-      }
+      handleDelete();
     }
   });
 
@@ -51,6 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
     constructFromInput(text);
   });
 
+  _4(".reset").on("click", (e) => {
+    handleReset();
+  });
+
 });
 
 const constructFromInput = (input) => {
@@ -70,6 +69,26 @@ const constructFromInput = (input) => {
       }
     }, 200);
   });
+};
+
+const handleReset = () => {
+  let wordCount = _4(".input").children().nodes.length;
+  _4(".paste-input").clear();
+  index = {};
+  _4(".heatrow").children().attr("style", `box-shadow: 0px 0px 9px 0px #212121;`);
+  while (wordCount !== 0) {
+    handleDelete();
+    wordCount -= 1;
+  }
+};
+
+const handleDelete = () => {
+  let children = _4(".input").children();
+  let lastChild = children.nodes[children.nodes.length - 1];
+  lastChild.remove();
+  if (children.nodes.length === 1) {
+    addSpace();
+  }
 };
 
 const addSpace = () => {
